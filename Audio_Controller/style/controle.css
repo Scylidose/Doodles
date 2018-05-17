@@ -1,0 +1,47 @@
+/* Couleur et dimensions du bouton avancer */
+.avancer {
+    background-color: rgb(3, 3, 4);
+    width: 20px;
+    height: 10px;
+    z-index: 267;
+}
+
+/* Couleur et dimensions du bouton pause */
+.pause {
+    background-color: rgb(3, 3, 4);
+    width: 9px;
+    height: 10px;
+    z-index: 266;
+}
+
+/* Couleur et dimensions du bouton jouer */
+.play {
+    background-color: rgb(3, 3, 4);
+    width: 9px;
+    height: 10px;
+    z-index: 265;
+}
+
+/* Couleur et dimensions du bouton rembobiner */
+.rembobiner {
+    background-color: rgb(3, 3, 4);
+    width: 20px;
+    height: 10px;
+    z-index: 266;
+}
+
+/* Couleur et dimensions du speaker éteint */
+.speaker_off {
+    background-color: rgb(0, 0, 0);
+    width: 16px;
+    height: 12px;
+    z-index: 271;
+}
+
+/* Couleur et dimensions du speaker */
+.speaker_on {
+    background-color: rgb(0, 0, 0);
+    width: 15px;
+    height: 12px;
+    z-index: 270;
+}

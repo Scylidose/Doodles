@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lecteur de piste audio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        svg {
+            margin-right: 11px;
+        }
+
+        #controle,
+        #progression,
+        #control-volume {
+            position: relative;
+            display: inline-block;
+        }
+
+        #wrapper {
+            position: absolute;
+            margin: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="style/controle.css">
+    <link rel="stylesheet" href="style/progression.css">
+    <link rel="stylesheet" href="style/volume.css">
+    <script>
+        $(document).ready(function () {
+            $("#vol-control").hide();
+            afficher_titre();
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="controle">
+
+            <svg onclick="back();" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="10px"
+                class=«rembobiner»>
+                <path fill-rule="evenodd" fill="rgb(3, 3, 4)" d="M11.262,4.999 L19.998,0.001 L19.998,9.997 L11.262,4.999 ZM2.536,4.999 L11.262,0.001 L11.262,4.999 L11.262,9.997 L2.536,4.999 ZM-0.001,0.001 L2.536,0.001 L2.536,9.997 L-0.001,9.997 L-0.001,0.001 Z"
+                />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="10px" class=«play»
+                id="changement" onclick="document.getElementById('player').play(); jouer();">
+                <path fill-rule="evenodd" fill="rgb(3, 3, 4)" d="M-0.000,10.000 L9.004,4.998 L-0.000,-0.004 L-0.000,10.000 Z" />
+            </svg>
+
+            <svg onclick="forw();" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="10px"
+                class=«avancer»>
+                <path fill-rule="evenodd" fill="rgb(3, 3, 4)" d="M17.464,9.999 L17.464,0.003 L20.001,0.003 L20.001,9.999 L17.464,9.999 ZM8.738,5.001 L8.738,0.003 L17.464,5.001 L8.738,9.999 L8.738,5.001 ZM0.002,0.003 L8.738,5.001 L0.002,9.999 L0.002,0.003 Z"
+                />
+            </svg>
+
+        </div>
+
+        <div id="progression">
+            <input id="seekbar" type="range" value="0" max="100" step="1" onclick="document.getElementById('player').play(); jouer();">
+            <progress value="0" max="100"></progress>
+            <div id="title"></div>
+        </div>
+
+        <audio id="player" onended="forw();" src="musique/65daysofstatic - Debutante (No Mans Sky).mp3">
+        </audio>
+
+        <div id="control-volume">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15px" height="12px" id="volume"
+                class="speaker-on" onclick="afficher();">
+                <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M12.871,12.000 C12.695,11.878 12.511,11.749 12.350,11.635 C14.871,7.866 14.856,4.127 12.357,0.357 C12.519,0.251 12.695,0.122 12.871,0.000 C15.665,3.298 15.753,8.588 12.871,12.000 ZM10.931,10.381 C10.754,10.260 10.571,10.138 10.402,10.024 C12.195,7.341 12.188,4.674 10.409,1.968 C10.571,1.862 10.754,1.733 10.938,1.611 C13.041,4.043 13.085,7.911 10.931,10.381 ZM8.454,8.421 C9.519,6.809 9.527,5.206 8.454,3.579 C8.534,3.519 8.623,3.458 8.711,3.397 C8.799,3.336 8.895,3.276 8.990,3.215 C10.240,4.491 10.512,7.098 8.998,8.785 C8.821,8.664 8.637,8.542 8.454,8.421 ZM3.881,8.094 C3.800,8.010 3.661,7.949 3.543,7.949 C2.448,7.942 1.345,7.942 0.250,7.942 C0.176,7.942 0.096,7.942 0.000,7.942 C0.000,6.635 0.000,5.365 0.000,4.066 C0.088,4.066 0.162,4.066 0.243,4.066 C1.331,4.066 2.426,4.058 3.514,4.073 C3.683,4.073 3.793,4.020 3.911,3.899 C5.035,2.728 6.160,1.573 7.285,0.403 C7.344,0.342 7.380,0.274 7.432,0.205 C7.446,0.213 7.461,0.228 7.476,0.236 C7.476,4.081 7.476,7.927 7.476,11.795 C7.402,11.726 7.344,11.673 7.292,11.612 C6.160,10.434 5.021,9.264 3.881,8.094 Z"/>
+            </svg>
+
+            <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)" />
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
