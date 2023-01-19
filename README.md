@@ -2,13 +2,13 @@
 
 Little projects that I developed on my free time to try new technologies or random ideas.
 
-## [Audio Controller](https://github.com/Scylidose/Doodles/tree/master/Expand_Dot)
+## [Audio Controller](https://github.com/Scylidose/Doodles/tree/master/Audio_Controller)
 
 Customized audio controller to control MP3 files.
 
 - Used language: **HTML, CSS, Javascript (JQuery)**
 
-## [Expand Dot](https://github.com/Scylidose/Doodles/tree/master/Audio_Controller)
+## [Expand Dot](https://github.com/Scylidose/Doodles/tree/master/Expand_Dot)
 
 
 Expand a little circle on click to fit all the screen.
