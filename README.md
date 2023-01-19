@@ -10,7 +10,10 @@ Customized audio controller to control MP3 files.
 
 ## [Expand Dot](https://github.com/Scylidose/Doodles/tree/master/Audio_Controller)
 
+
 Expand a little circle on click to fit all the screen.
+
+https://user-images.githubusercontent.com/28122432/213334501-f1d79754-f643-48bf-bb8f-11b366054f80.mp4
 
 - Used language: **HTML, CSS, Javascript (JQuery)**
 
